@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "npx sass --silence-deprecation=import,mixed-decls,moz-document src/index.scss dist/old-github-ui.user.css && sed 's/;/ !important;/g' $_"
+		"build": "npx --no-source-map sass --silence-deprecation=import,mixed-decls,moz-document src/index.scss dist/old-github-ui.user.css && sed 's/;/ !important;/g' $_"
 	},
 	"dependencies": {
 		"sass": "^1.91.0"
