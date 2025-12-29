@@ -1,0 +1,44 @@
+[class*="prc-TreeView-TreeViewItemContainer-"] {
+	--toggle-width: calc(var(--icon-size) + var(--base-size-4));
+	// for some reason they divide --toggle-width by 2
+	--spacer-width: calc((var(--level) - 1) * var(--toggle-width));
+
+	[class*="prc-TreeView-TreeViewItem-"][aria-current="true"] > & {
+		--control-transparent-bgColor-hover: color-mix(
+			in srgb,
+			var(--bgColor-accent-emphasis) 75%,
+			black
+		);
+		--fgColor-muted: var(--fgColor-onEmphasis);
+		--treeViewItem-leadingVisual-iconColor-rest: var(--fgColor-onEmphasis);
+		color: var(--fgColor-onEmphasis);
+		background-color: var(--bgColor-accent-emphasis);
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+[class*="prc-TreeView-TreeViewItemContent-"] {
+	--custom-line-height: var(--icon-size);
+	gap: var(--stack-gap-normal);
+}
+
+[class*="prc-TreeView-TreeViewItemLevelLine-"] {
+	width: 50%;
+}
+
+[class*="prc-TreeView-TreeViewItemToggle-"] {
+	@extend %button--dropdown;
+	padding: 0;
+	align-items: center;
+
+	[class*="prc-TreeView-TreeViewItem-"][aria-expanded="false"] &::after {
+		transform: rotate(-90deg);
+	}
+
+	svg {
+		display: none;
+	}
+}

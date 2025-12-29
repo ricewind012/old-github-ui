@@ -1,0 +1,95 @@
+[class*="prc-ActionList-ActionList-"] {
+	color: var(--fgColor-neutral);
+	font-size: var(--text-body-lineHeight-small);
+	padding: 0;
+}
+
+[class*="prc-ActionList-ActionListContent-"] {
+	position: unset;
+	padding: var(--control-medium-paddingInline-normal);
+	padding-left: calc(
+		var(--icon-size) + var(--control-medium-gap) +
+			var(--control-medium-paddingInline-normal)
+	);
+	overflow: hidden;
+	color: inherit;
+	cursor: pointer;
+}
+
+[class*="prc-ActionList-ActionListItem-"] {
+	border-bottom: var(--borderWidth-thin) solid var(--borderColor-muted);
+	border-radius: 0;
+	margin: 0;
+
+	[class*="prc-ActionList-ActionList-"] > &:last-child,
+	[class*="prc-ActionList-Group-"]:last-child
+		> [class*="prc-ActionList-GroupList-"]
+		> &:last-child {
+		border-bottom: none;
+	}
+
+	&[data-active],
+	&:focus-visible,
+	&:hover {
+		// can be seen in .MultiSelectCheckbox
+		--control-checked-bgColor-rest: var(--fgColor-onEmphasis);
+		--control-checked-fgColor-rest: var(--bgColor-accent-emphasis);
+		// can be seen in .Description
+		--fgColor-muted: var(--fgColor-onEmphasis);
+		color: var(--fgColor-onEmphasis);
+		background-color: var(--bgColor-accent-emphasis);
+
+		* {
+			color: inherit;
+		}
+	}
+}
+
+// separators, each menu item already has one
+[class*="prc-ActionList-ActionList-"][data-dividers="true"]
+	[data-description-variant="inline"]::before,
+[class*="prc-ActionList-ActionListSubContent-"]::before,
+[class*="prc-ActionList-Divider-"] {
+	display: none;
+}
+
+[class*="prc-ActionList-Group-"] {
+	margin: 0;
+}
+
+[class*="prc-ActionList-GroupHeading-"] {
+	color: var(--fgColor-default);
+	text-shadow: 0 1px 0 var(--fgColor-onEmphasis);
+}
+
+[class*="prc-ActionList-GroupHeadingWrap-"] {
+	padding: var(--control-medium-paddingInline-normal)
+		var(--control-medium-paddingInline-spacious);
+	margin: 0;
+	line-height: 16px;
+	background-color: var(--bgColor-muted);
+	border-bottom: var(--borderWidth-thin) solid var(--borderColor-default);
+}
+
+[class*="prc-ActionList-ItemLabel-"] {
+	color: inherit;
+}
+
+[class*="prc-ActionList-LeadingVisual-"]:has(> .octicon),
+[class*="prc-ActionList-LeadingAction-"] {
+	color: inherit;
+	fill: currentColor;
+	position: absolute;
+	left: var(--control-medium-paddingInline-normal);
+}
+
+// can be seen in search
+[class*="prc-ActionList-TrailingAction-"] {
+	margin: auto;
+}
+
+[class*="prc-ActionList-TrailingActionButton-"] {
+	@extend %button--small;
+
+	height: unset;
+}

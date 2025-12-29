@@ -1,0 +1,90 @@
+%-container {
+	position: relative;
+	top: 1px;
+	min-height: unset;
+	box-shadow: none;
+}
+
+%-list {
+	gap: 0;
+}
+
+%-item {
+	--fgColor-muted: #bbb;
+	float: left;
+	font: inherit;
+	padding: 7px 15px 8px;
+	color: #666;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	border-bottom: none;
+	border-top-width: 3px;
+	border-radius: var(--borderRadius-medium) var(--borderRadius-medium) 0 0;
+
+	&:hover,
+	&:focus {
+		color: #333;
+		text-decoration: none;
+	}
+
+	[data-content]::before {
+		display: none;
+	}
+}
+
+%-item--selected {
+	color: #111;
+	background-color: #fff;
+	border-color: #d26911 var(--borderColor-default) transparent;
+
+	&::after {
+		display: none;
+	}
+}
+
+[class*="prc-components-UnderlineItem-"] {
+	@extend %-item;
+
+	&[aria-current] {
+		@extend %-item--selected;
+
+		[data-component="icon"] {
+			color: inherit;
+		}
+	}
+}
+
+[class*="prc-components-UnderlineItemList-"] {
+	@extend %-list;
+}
+
+[class*="prc-components-UnderlineWrapper-"] {
+	@extend %-container;
+}
+
+.UnderlineNav {
+	@extend %-container;
+
+	max-width: var(--content-width);
+	margin-inline: auto;
+}
+
+.UnderlineNav-body {
+	@extend %-list;
+}
+
+.UnderlineNav-item {
+	@extend %-item;
+
+	&.selected {
+		@extend %-item--selected;
+	}
+
+	.Counter {
+		color: #555;
+	}
+}
+
+.UnderlineNav-octicon {
+	fill: currentColor;
+}

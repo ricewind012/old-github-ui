@@ -1,0 +1,17 @@
+[class*="prc-Banner-Banner-"] {
+	@extend %flash-colors;
+	font-size: 14px;
+	line-height: var(--text-body-lineHeight-large);
+
+	&:not([class*="ValidationMessage-module__Banner-"]) {
+		padding: var(--base-size-20);
+	}
+}
+
+[class*="prc-Banner-BannerContent-"] {
+	margin-block: var(--base-size-20);
+}
+
+[class*="prc-Banner-BannerIcon-"] {
+	padding: var(--base-size-20);
+}

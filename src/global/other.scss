@@ -1,0 +1,9 @@
+#global-user-nav-drawer-header {
+	background-color: var(--bgColor-muted);
+	border-bottom: var(--borderWidth-thin) solid var(--borderColor-default);
+	padding: var(--base-size-12);
+
+	& + div {
+		padding: 0;
+	}
+}

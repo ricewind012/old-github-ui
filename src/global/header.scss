@@ -1,0 +1,116 @@
+.AppHeader {
+	all: unset;
+
+	.AppHeader-button {
+		@extend %button--octicon;
+
+		// bruhhh
+		.octicon-plus {
+			transform: none;
+		}
+	}
+
+	.AppHeader-button--dropdown {
+		@extend %button--dropdown;
+
+		// empty
+		.Button-label {
+			display: none;
+		}
+	}
+
+	.AppHeader-globalBar .AppHeader-search .AppHeader-searchButton {
+		@extend %text-input;
+
+		color: var(--fgColor-muted);
+
+		& > div {
+			overflow: visible;
+		}
+
+		.AppHeader-search-kbd {
+			@extend kbd;
+
+			margin-block: -2px -1px;
+			margin-inline: 2px;
+			width: unset;
+			height: unset;
+		}
+	}
+
+	.AppHeader-search-visual--leading {
+		display: none;
+	}
+
+	.Button[data-login] {
+		all: unset;
+		display: flex;
+		align-items: center;
+		@extend %button--dropdown;
+	}
+}
+
+.AppHeader-actions {
+	gap: 0;
+	align-items: center;
+
+	&::before {
+		display: none;
+	}
+}
+
+.AppHeader-globalBar {
+	position: relative;
+	z-index: 3;
+	padding-inline: calc((100% - var(--content-width)) / 2);
+	padding-block: 10px;
+	background-color: var(--bgColor-muted);
+	background-clip: padding-box;
+	border-bottom: var(--borderWidth-thin) solid var(--borderColor-default);
+
+	font-family:
+		Roboto,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Helvetica Neue",
+		"Segoe UI",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Open Sans",
+		sans-serif;
+	font-size: 16px;
+	line-height: var(--text-body-lineHeight-medium);
+	color: var(--fgColor-muted);
+}
+
+.AppHeader-globalBar-end {
+	--controlStack-medium-gap-auto: 5px;
+	align-items: center;
+	max-height: unset;
+}
+
+.AppHeader-globalBar-start {
+	align-items: center;
+
+	// Left sidebar button
+	& > [class=""] {
+		display: none;
+	}
+}
+
+.AppHeader-localBar {
+	position: relative;
+	padding-top: 20px;
+	background-color: #fafafa;
+	border-bottom: var(--borderWidth-thin) solid #eee;
+}
+
+.AppHeader-logo {
+	margin: 0;
+}
+
+.AppHeader-user {
+	background-color: transparent;
+	margin-left: var(--controlStack-medium-gap-auto);
+}

@@ -1,0 +1,53 @@
+/* ==UserStyle==
+@name           Old GitHub UI
+@namespace      github.com/ricewind012/old-github-ui
+@version        1.0.0
+@description    yep
+@author         ricewind
+==/UserStyle== */
+
+@-moz-document domain("github.com") {
+	@import "./mixins/components";
+	@import "./mixins/other";
+
+	@import "./components-github/AuthorAvatar";
+	@import "./components-github/ChecksStatusBadge";
+	@import "./components-github/FeaturePreviewDialog";
+	@import "./components-github/LatestCommit";
+	@import "./components-github/MarkdownEditor";
+
+	@import "./components-primer/ActionList";
+	@import "./components-primer/Avatar";
+	@import "./components-primer/Banner";
+	@import "./components-primer/BranchName";
+	@import "./components-primer/Button";
+	@import "./components-primer/ButtonGroup";
+	@import "./components-primer/ConfirmationDialog";
+	@import "./components-primer/Counter";
+	@import "./components-primer/Dialog";
+	@import "./components-primer/FilteredActionList";
+	@import "./components-primer/Flash";
+	@import "./components-primer/Label";
+	@import "./components-primer/Overlay";
+	@import "./components-primer/PageLayout";
+	@import "./components-primer/Pagination";
+	@import "./components-primer/SegmentedControl";
+	@import "./components-primer/SelectPanel";
+	@import "./components-primer/SimpleSelect";
+	@import "./components-primer/StateLabel";
+	@import "./components-primer/TabNav";
+	@import "./components-primer/TextInput";
+	@import "./components-primer/TooltipV2";
+	@import "./components-primer/TreeView";
+	@import "./components-primer/UnderlineNav";
+
+	@import "./global/common";
+	@import "./global/header";
+	@import "./global/other";
+	@import "./global/vars";
+
+	@import "./pages/code-view";
+	@import "./pages/commits";
+	@import "./pages/issues";
+	@import "./pages/repo-overview";
+}

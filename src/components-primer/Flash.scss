@@ -1,0 +1,21 @@
+[class*="prc-Flash-Flash-"] {
+	@extend %flash-colors;
+	position: relative;
+	padding: 15px;
+	font-size: 14px;
+	line-height: var(--text-body-lineHeight-large);
+
+	&[data-variant="default"] {
+		color: var(--fgColor-accent);
+	}
+	&[data-variant="warning"] {
+		color: var(--fgColor-attention);
+	}
+	&[data-variant="danger"] {
+		color: var(--fgColor-danger);
+	}
+
+	svg {
+		color: inherit;
+	}
+}

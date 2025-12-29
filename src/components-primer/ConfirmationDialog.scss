@@ -1,0 +1,6 @@
+[class*="prc-ConfirmationDialog-ConfirmationHeader-"] {
+	& > [data-component="IconButton"] {
+		// TODO: make Button's [data-variant="invisible"] extend %button--octicon ?
+		@extend %button--octicon;
+	}
+}

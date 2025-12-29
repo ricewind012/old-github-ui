@@ -1,0 +1,164 @@
+:where([class*="prc-Button-ButtonBase-"]) {
+	@extend %button;
+
+	&:disabled,
+	&[data-inactive],
+	&[aria-disabled="true"] {
+		@extend %button-disabled;
+	}
+
+	&[aria-expanded="true"] {
+		@extend %button-selected;
+	}
+
+	&:focus-visible {
+		@extend %button-focus;
+	}
+
+	&[data-size="small"] {
+		@extend %button--small;
+	}
+
+	&[data-variant="primary"] {
+		@extend %button--primary;
+	}
+
+	&[data-variant="danger"] {
+		@extend %button--danger;
+	}
+
+	&[data-variant="invisible"] {
+		@extend %button--invisible;
+	}
+
+	&:where([data-variant="link"]) {
+		@extend %button--link;
+	}
+
+	&:where([class*="prc-Button-IconButton-"]) {
+		@extend %button--icon-button;
+
+		&[aria-haspopup] {
+			@extend %button--dropdown;
+
+			display: flex;
+			width: auto;
+		}
+
+		&[data-size="small"] {
+			padding-block: var(--control-small-paddingBlock);
+		}
+	}
+
+	&[aria-haspopup] [data-component="trailingVisual"] {
+		@extend %button--dropdown;
+
+		display: block;
+
+		.octicon {
+			display: none;
+		}
+	}
+
+	&[aria-haspopup]:has(> .octicon:only-child) {
+		@extend %button--dropdown;
+	}
+
+	&:where(
+		[class*="prc-Button-IconButton-"],
+		:not(:has([data-component="text"]))
+	) {
+		&[data-size="small"] {
+			padding-block: var(--control-small-paddingBlock);
+		}
+	}
+
+	[data-component="trailingVisual"] {
+		color: inherit;
+	}
+
+	[data-component="text"] {
+		line-height: inherit;
+	}
+}
+
+.Button {
+	@extend %button;
+	// .timeline-comment-action
+	display: inline-flex;
+
+	&.Button--small {
+		@extend %button--small;
+	}
+
+	&.Button--primary {
+		@extend %button--primary;
+	}
+
+	&.Button--danger {
+		@extend %button--danger;
+	}
+
+	&.Button--invisible {
+		@extend %button--invisible;
+	}
+
+	&[aria-haspopup] {
+		@extend %button--dropdown;
+
+		//.Button-trailingAction,
+		.octicon-triangle-down {
+			display: none;
+		}
+	}
+
+	&:where(.Button--iconOnly) {
+		@extend %button--icon-button;
+
+		&:where(.Button--small) {
+			padding-block: var(--control-small-paddingBlock);
+		}
+	}
+
+	[open] > &,
+	&[aria-expanded="true"] {
+		@extend %button-selected;
+	}
+}
+
+.btn {
+	@extend %button;
+
+	&.btn-sm {
+		@extend %button--small;
+
+		// TODO: maybe not needed with min-height: var(--control-small-size)
+		&:has(> .octicon:only-child)::after {
+			margin-block: 2px;
+		}
+
+		.octicon {
+			vertical-align: text-bottom;
+		}
+	}
+
+	&.btn-invisible {
+		@extend %button--invisible;
+	}
+
+	&[aria-haspopup] {
+		@extend %button--dropdown;
+
+		& > .octicon-triangle-down {
+			display: none;
+		}
+	}
+
+	[open] > & {
+		@extend %button-selected;
+	}
+
+	.Counter {
+		vertical-align: unset;
+	}
+}

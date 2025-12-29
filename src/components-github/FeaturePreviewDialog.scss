@@ -1,0 +1,9 @@
+[class*="FeaturePreviewDialog-module__dialog-"] {
+	[class*="prc-Dialog-Body-"] {
+		padding: 0;
+	}
+
+	[class*="Tabs-module__tabPanel-"] {
+		padding: var(--base-size-16);
+	}
+}

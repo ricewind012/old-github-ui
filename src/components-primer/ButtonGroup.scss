@@ -1,0 +1,127 @@
+// TODO:
+// these are all copied cuz of specificity
+[class*="prc-ButtonGroup-ButtonGroup-"] {
+	& > :not([data-loading-wrapper]) {
+		a,
+		button {
+			border-radius: 0;
+		}
+
+		&:first-child a,
+		&:first-child button {
+			border-bottom-left-radius: var(--borderRadius-medium);
+			border-top-left-radius: var(--borderRadius-medium);
+		}
+
+		&:last-child a,
+		&:last-child button {
+			border-bottom-right-radius: var(--borderRadius-medium);
+			border-top-right-radius: var(--borderRadius-medium);
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+			z-index: 1;
+		}
+	}
+
+	&:has(div:last-child:empty) a,
+	&:has(div:last-child:empty) button {
+		border-radius: var(--borderRadius-medium);
+	}
+
+	& > [data-loading-wrapper] {
+		margin-inline-end: calc(var(--borderWidth-thin) * -1);
+		position: relative;
+
+		& a,
+		& button {
+			border-radius: 0;
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+			z-index: 1;
+		}
+
+		&:first-child a,
+		&:first-child button {
+			border-bottom-left-radius: var(--borderRadius-medium);
+			border-top-left-radius: var(--borderRadius-medium);
+		}
+
+		&:last-child a,
+		&:last-child button {
+			border-bottom-right-radius: var(--borderRadius-medium);
+			border-top-right-radius: var(--borderRadius-medium);
+		}
+	}
+}
+
+.BtnGroup-item {
+	position: relative;
+	float: left;
+	border-right-width: 0;
+	border-radius: 0;
+
+	&:first-child {
+		border-top-left-radius: var(--borderRadius-medium);
+		border-bottom-left-radius: var(--borderRadius-medium);
+	}
+
+	&:last-child {
+		border-right-width: var(--borderWidth-thin);
+		border-top-right-radius: var(--borderRadius-medium);
+		border-bottom-right-radius: var(--borderRadius-medium);
+	}
+
+	&.selected,
+	&[aria-selected="true"],
+	&:focus,
+	&:active,
+	&:hover {
+		border-right-width: var(--borderWidth-thin);
+
+		+ .BtnGroup-item,
+		+ .BtnGroup-parent .BtnGroup-item {
+			border-left-width: 0;
+		}
+	}
+}
+
+.BtnGroup-parent {
+	float: left;
+
+	&:first-child .BtnGroup-item {
+		border-top-left-radius: var(--borderRadius-medium);
+		border-bottom-left-radius: var(--borderRadius-medium);
+	}
+
+	&:last-child .BtnGroup-item {
+		border-right-width: var(--borderWidth-thin);
+		border-top-right-radius: var(--borderRadius-medium);
+		border-bottom-right-radius: var(--borderRadius-medium);
+	}
+
+	.BtnGroup-item {
+		border-right-width: 0;
+		border-radius: 0;
+	}
+
+	&.selected,
+	&[aria-selected="true"],
+	&:focus,
+	&:active,
+	&:hover {
+		.BtnGroup-item {
+			border-right-width: var(--borderWidth-thin);
+		}
+
+		+ .BtnGroup-item,
+		+ .BtnGroup-parent .BtnGroup-item {
+			border-left-width: 0;
+		}
+	}
+}

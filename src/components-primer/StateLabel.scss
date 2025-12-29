@@ -1,0 +1,25 @@
+.State,
+[class*="prc-StateLabel-StateLabel-"] {
+	display: inline-block;
+	padding: var(--control-small-paddingBlock)
+		var(--control-medium-paddingInline-normal);
+	font-weight: var(--base-text-weight-semibold);
+	line-height: var(--control-medium-lineBoxHeight);
+	color: var(--fgColor-onEmphasis);
+	text-align: center;
+	border: none;
+	border-radius: var(--borderRadius-medium);
+	height: unset;
+
+	// statuses
+	--bgColor-attention-emphasis: #fffa5d;
+	--bgColor-closed-emphasis: #bd2c00;
+	--bgColor-done-emphasis: #6e5494;
+	--bgColor-neutral-emphasis: #999;
+	--bgColor-open-emphasis: #6cc644;
+}
+
+.State--small,
+[class*="prc-StateLabel-StateLabel-"][data-variant="small"] {
+	padding-block: 0;
+}

@@ -1,0 +1,10 @@
+[class*="prc-BranchName-BranchName-"] {
+	position: relative;
+	display: inline-block;
+	padding: 0 var(--control-medium-paddingInline-condensed);
+	font: 0.75em/2 var(--fontStack-monospace);
+	color: #336479;
+	white-space: nowrap;
+	background-color: #e8f0f8;
+	border-radius: var(--borderRadius-medium);
+}

@@ -1,0 +1,256 @@
+:root[data-color-mode="auto"][data-light-theme="light"] {
+	/* Design tokens */
+	--bgColor-default: #fff;
+	--bgColor-muted: #f5f5f5;
+	--bgColor-accent-emphasis: #4078c0;
+
+	--fgColor-default: #333;
+	--fgColor-muted: #999;
+	--fgColor-neutral: #767676;
+	--fgColor-disabled: #767676;
+	--fgColor-onEmphasis: #fff;
+
+	--fgColor-accent: #4078c0;
+	--fgColor-attention: #fffa5d;
+	--fgColor-done: #6e5494;
+	--fgColor-danger: #bd2c00;
+	--fgColor-severe: #bd2c00;
+	--fgColor-sponsors: #bf3989;
+	--fgColor-success: #6cc644;
+
+	// Here for usage in colors, I don't think GitHub actually uses any of these
+	//
+	// TODO:
+	// - gray
+	// - maybe use colors above too
+	// - limit each color to 10
+	//
+	// Generated with https://elektrobild.org/tools/sort-colors
+	// and 'colors'.split(', ').map((e,i)=>`--display-green-scale-${i}: ${e}`).join(';')
+
+	// GitHub actually only uses 10, but eh
+	--display-green-scale-0: #b9dcac;
+	--display-green-scale-1: #c3ecb4;
+	--display-green-scale-2: #add39f;
+	--display-green-scale-3: #a7c89b;
+	--display-green-scale-4: #8add6d;
+	--display-green-scale-5: #79d858;
+	--display-green-scale-6: #60b044;
+	--display-green-scale-7: #569e3d;
+	--display-green-scale-8: #4a993e;
+	--display-green-scale-9: #4c8b36;
+	--display-green-scale-10: #418737;
+
+	--display-red-scale-0: #cb7f7f;
+	--display-red-scale-1: #dc5f59;
+	--display-red-scale-2: #cd504a;
+	--display-red-scale-3: #b33630;
+	--display-red-scale-4: #9f312c;
+	--display-red-scale-5: #990000;
+
+	//--color-prettylights-syntax-brackethighlighter-angle
+	//--color-prettylights-syntax-brackethighlighter-unmatched
+	//--color-prettylights-syntax-carriage-return-bg
+	//--color-prettylights-syntax-carriage-return-text
+	--color-prettylights-syntax-comment: #969896;
+	--color-prettylights-syntax-constant: #0086b3;
+	//--color-prettylights-syntax-constant-other-reference-link
+	--color-prettylights-syntax-entity: #795da3;
+	--color-prettylights-syntax-entity-tag: #63a35c;
+	--color-prettylights-syntax-invalid-illegal-bg: #b52a1d;
+	--color-prettylights-syntax-invalid-illegal-text: #f8f8f8;
+	--color-prettylights-syntax-keyword: #a71d5d;
+	//--color-prettylights-syntax-markup-changed-bg
+	//--color-prettylights-syntax-markup-changed-text
+	--color-prettylights-syntax-markup-deleted-bg: #ffecec;
+	--color-prettylights-syntax-markup-deleted-text: #bd2c00;
+	--color-prettylights-syntax-markup-heading: #1d3e81;
+	//--color-prettylights-syntax-markup-ignored-bg
+	//--color-prettylights-syntax-markup-ignored-text
+	//--color-prettylights-syntax-markup-inserted-bg
+	//--color-prettylights-syntax-markup-inserted-text
+	--color-prettylights-syntax-markup-list: #693a17;
+	--color-prettylights-syntax-meta-diff-range: #795da3;
+	--color-prettylights-syntax-string: #183691;
+	--color-prettylights-syntax-string-regexp: #63a35c;
+	//--color-prettylights-syntax-sublimelinter-gutter-mark
+	--color-prettylights-syntax-variable: #ed6a43;
+	--color-prettylights-syntax-markup-bold: #333;
+	--color-prettylights-syntax-markup-italic: #333;
+	--color-prettylights-syntax-storage-modifier-import: #333;
+
+	--borderColor-default: #e5e5e5;
+	--borderColor-muted: #ddd;
+	--borderColor-neutral-muted: #bbb;
+	--borderColor-accent-emphasis: #4078c0;
+	--borderColor-accent-muted: #4078c0;
+
+	// ???
+	--border-default: var(--borderWidth-thin) solid var(--borderColor-default);
+
+	--borderRadius-full: var(--borderRadius-large);
+	--borderRadius-large: 6px;
+	--borderRadius-medium: 3px;
+	--borderRadius-small: 2px;
+	--borderWidth-thick: 2px;
+	--borderWidth-thicker: 4px;
+	--borderWidth-thin: 1px;
+
+	--button-invisible-iconColor-rest: inherit;
+
+	/*
+
+  --control-large-gap: 0.5rem;
+  --control-large-lineBoxHeight: 1.25rem;
+  --control-large-paddingInline-normal: 0.75rem;
+  --control-large-paddingInline-spacious: 1rem;
+  --control-large-size: 2.5rem;
+  */
+
+	--control-medium-gap: 4px;
+	--control-medium-lineBoxHeight: 20px;
+	--control-medium-paddingInline-condensed: 5px;
+	--control-medium-paddingInline-normal: 8px;
+	--control-medium-paddingInline-spacious: 10px;
+	--control-medium-size: 34px;
+
+	--control-small-gap: 5px;
+	--control-small-lineBoxHeight: var(--text-body-lineHeight-small);
+	--control-small-paddingBlock: 4px;
+	/*
+  --control-small-paddingInline-condensed: 0.5rem;
+  --control-small-paddingInline-normal: 0.75rem;
+  */
+	--control-small-size: 26px;
+
+	/*
+  --control-xlarge-gap: 0.5rem;
+  --control-xlarge-lineBoxHeight: 1.25rem;
+  --control-xlarge-paddingInline-normal: 0.75rem;
+  --control-xlarge-paddingInline-spacious: 1rem;
+  --control-xlarge-size: 3rem;
+
+  --control-xsmall-gap: 0.25rem;
+  --control-xsmall-lineBoxHeight: 1.25rem;
+  --control-xsmall-paddingInline-condensed: 0.25rem;
+  --control-xsmall-paddingInline-normal: 0.5rem;
+  --control-xsmall-paddingInline-spacious: 0.75rem;
+  --control-xsmall-size: 1.5rem;
+  */
+
+	--controlStack-large-gap-auto: var(--base-size-12);
+	--controlStack-large-gap-condensed: 8px;
+	--controlStack-large-gap-spacious: 10px;
+	--controlStack-medium-gap-auto: var(--base-size-6);
+	--controlStack-medium-gap-condensed: 8px;
+	--controlStack-medium-gap-spacious: 10px;
+	--controlStack-small-gap-auto: var(--base-size-4);
+	--controlStack-small-gap-condensed: 8px;
+	--controlStack-small-gap-spacious: 10px;
+
+	--stack-gap-condensed: var(--base-size-4);
+	--stack-gap-normal: var(--base-size-8);
+	--stack-gap-spacious: var(--base-size-12);
+	--stack-padding-condensed: var(--base-size-4);
+	--stack-padding-normal: var(--base-size-8);
+	--stack-padding-spacious: var(--base-size-12);
+
+	/* shadows */
+	--shadow-floating-legacy: var(--shadow-lg);
+	--shadow-floating-small: var(--shadow-lg);
+
+	/*
+	--shadow-floating-large: 0px 0px 0px 1px #d1d9e0, 0px 40px 80px 0px #25292e3d;
+	--shadow-floating-medium:
+		0px 0px 0px 1px #d1d9e0, 0px 8px 16px -4px #25292e14,
+		0px 4px 32px -4px #25292e14, 0px 24px 48px -12px #25292e14,
+		0px 48px 96px -24px #25292e14;
+	--shadow-floating-small:
+		0px 0px 0px 1px #d1d9e080, 0px 6px 12px -3px #25292e0a,
+		0px 6px 18px 0px #25292e1f;
+	--shadow-floating-xlarge:
+		0px 0px 0px 1px #d1d9e0, 0px 56px 112px 0px #25292e52;
+		*/
+
+	/* text */
+	--fontStack-monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	--fontStack-sansSerif:
+		Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--fontStack-sansSerifDisplay: var(--fontStack-sansSerif);
+	--fontStack-system: var(--fontStack-sansSerif);
+
+	--base-text-weight-light: 300;
+	--base-text-weight-medium: 500;
+	--base-text-weight-normal: 400;
+	--base-text-weight-semibold: 600;
+
+	--h1-size: 32px;
+	--h2-size: 24px;
+	--h3-size: 20px;
+	--h4-size: 16px;
+	--h5-size: 14px;
+	--h6-size: 12px;
+
+	--text-body-lineHeight-large: 1.5;
+	--text-body-lineHeight-medium: 1.4;
+	--text-body-lineHeight-small: 1.2;
+	// TODO: this is also correct, maybe remove?
+	--text-body-size-large: 15px;
+	--text-body-size-medium: 13px;
+	--text-body-size-small: 12px;
+
+	/*
+  --text-caption-lineHeight: 1.3333;
+  --text-caption-size: 0.75rem;
+  --text-codeBlock-lineHeight: 1.5385;
+  --text-codeBlock-size: 0.8125rem;
+  --text-codeInline-size: 0.9285em;
+  --text-display-lineBoxHeight: 1.4;
+  --text-display-lineHeight: 1.4;
+  --text-display-size: 2.5rem;
+  --text-subtitle-lineHeight: 1.6;
+  --text-subtitle-size: 1.25rem;
+  --text-title-lineHeight-large: 1.5;
+  --text-title-lineHeight-medium: 1.6;
+  --text-title-lineHeight-small: 1.5;
+  --text-title-size-large: 2rem;
+  --text-title-size-medium: 1.25rem;
+  --text-title-size-small: 1rem;
+  */
+
+	// Other
+	--overlay-backdrop-bgColor: rgba(0, 0, 0, 0.25);
+	--overlay-bgColor: #fff;
+
+	// my
+	--content-width: 1280px;
+	--icon-size: 16px;
+
+	--shadow-color-1: rgba(0, 0, 0, 0.15);
+	--shadow-color-2: rgba(0, 0, 0, 0.075);
+	--shadow-lg: 0 3px 12px var(--shadow-color-1);
+	--shadow-control-sm: inset 0 1px 2px var(--shadow-color-2);
+	--shadow-control-md: inset 0 2px 4px var(--shadow-color-1);
+
+	// TODO
+	--control-focus-border: #51a7e8;
+	--control-focus-border-a50: color-mix(
+		in srgb,
+		var(--control-focus-border) 50%,
+		transparent
+	);
+	--control-focus-shadow: 0 0 5px var(--control-focus-border-a50);
+
+	@media (width <= 1280px) {
+		--content-width: 100%;
+	}
+
+	// Set a smaller font size for the original --base-size values
+	font-size: var(--text-body-size-small);
+}
+
+body {
+	font-size: var(--text-body-size-medium);
+	line-height: var(--text-body-lineHeight-medium);
+}

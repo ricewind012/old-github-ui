@@ -1,0 +1,23 @@
+[class*="LatestCommit-module__Box-"] {
+	position: relative;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: calc(var(--borderWidth-thin) * -1);
+	line-height: var(--control-medium-lineBoxHeight);
+	color: #68777d;
+	background-color: #f2f9fc;
+	border: var(--borderWidth-thin) solid #c9e6f2;
+	border-radius: var(--borderRadius-medium);
+}
+
+[class*="LatestCommit-module__Box_2-"] {
+	button {
+		@extend %expander-btn;
+	}
+
+	[data-testid="latest-commit-details-toggle"] {
+		svg {
+			display: none;
+		}
+	}
+}

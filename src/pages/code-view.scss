@@ -1,0 +1,82 @@
+[class*="BlobViewHeader-module__Box_1-"] {
+	padding: var(--control-medium-paddingInline-condensed)
+		var(--control-medium-paddingInline-spacious);
+	background-color: #f7f7f7;
+	border-bottom: var(--borderWidth-thin) solid #d8d8d8;
+	border-top-left-radius: var(--borderRadius-small);
+	border-top-right-radius: var(--borderRadius-small);
+
+	[class*="prc-Button-ButtonBase-"][class*="prc-Button-IconButton-"] {
+		//@extend %button--octicon;
+		@extend %button--small;
+	}
+}
+
+[class*="BlobViewHeader-module__Box_2-"] {
+	gap: var(--stack-gap-normal);
+}
+
+[class*="BlobViewHeader-module__Box_3-"] {
+	margin: 0;
+}
+
+[class*="BlobViewHeader-module__IconButton_2-"] {
+	margin-left: var(--stack-gap-normal);
+}
+
+[class*="CodeViewHeader-module__Box_1-"] {
+	margin-top: 0;
+	margin-left: var(--control-medium-paddingInline-condensed);
+	margin-bottom: var(--control-medium-paddingInline-spacious);
+	font-size: 16px;
+	color: var(--fgColor-neutral);
+
+	[class*="prc-Button-ButtonBase-"] {
+		@extend %button--small;
+	}
+}
+
+[class*="ReposFileTreeView-module__Box-"],
+[class*="ReposFileTreePane-module__Box_1-"] {
+	padding-left: 0;
+}
+
+[class*="ReposFileTreePane-module__FileResultsList-"] {
+	margin-left: 0;
+}
+
+// code container
+[aria-labelledby^="file-name-id"] > div {
+	padding: 0;
+}
+
+// LatestCommit parent
+[data-selector="repos-split-pane-content"] > :nth-child(3) > .border {
+	all: unset;
+
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.react-line-number {
+	--fgColor-default: rgba(0, 0, 0, 0.6);
+	--fgColor-muted: rgba(0, 0, 0, 0.3);
+	width: 1%;
+	min-width: 50px;
+	padding-inline: var(--control-medium-paddingInline-spacious);
+	// already set
+	//font-size: 12px;
+	// set by react
+	//line-height: 18px;
+	text-align: right;
+	white-space: nowrap;
+	vertical-align: top;
+	cursor: pointer;
+	user-select: none;
+}
+
+.react-line-numbers {
+	border-right: var(--borderWidth-thin) solid var(--borderColor-muted);
+}

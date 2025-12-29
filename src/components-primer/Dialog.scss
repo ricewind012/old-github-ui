@@ -1,0 +1,14 @@
+[class*="prc-Dialog-Dialog-"] {
+	// .Header bg cuz there isn't one originally
+	overflow: hidden;
+}
+
+[class*="prc-Dialog-Header-"] {
+	background-color: var(--bgColor-muted);
+
+	[data-component="IconButton"] {
+		@extend %button--octicon;
+
+		margin-inline-start: var(--base-size-4);
+	}
+}

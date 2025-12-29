@@ -1,0 +1,31 @@
+[class*="prc-components-TextInputWrapper-"] {
+	@extend %text-input;
+
+	&[data-focused] {
+		@extend %text-input--focus;
+	}
+
+	&[data-size="small"],
+	&[data-variant="small"] {
+		@extend %text-input--small;
+	}
+
+	&[data-size="large"],
+	&[data-variant="large"] {
+		@extend %text-input--large;
+	}
+
+	& > input {
+		padding: 0;
+		margin: 0;
+	}
+
+	.TextInput-icon {
+		display: none;
+	}
+}
+
+.form-control,
+.form-select {
+	@extend %text-input;
+}

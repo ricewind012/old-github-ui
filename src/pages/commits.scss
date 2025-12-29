@@ -1,0 +1,79 @@
+react-app[app-name="commits"]:not([initial-path*="/commit/"]) {
+	--commits_avatar-size: 36px;
+	--commits_spacing-x: 10px;
+	--commits_spacing-y: 8px;
+
+	[class*="prc-PageLayout-Header-"] {
+		display: none;
+	}
+
+	[class*="prc-AvatarStack-AvatarStack-"] {
+		--avatar-stack-size: var(--commits_avatar-size);
+		--mask-size: 0px;
+		--overlap-size: calc(var(--avatar-stack-size) * 0.75);
+	}
+
+	[class*="prc-AvatarStack-AvatarStack-"],
+	[class*="AuthorAvatar-module__authorAvatarImage-"] {
+		--avatarSize-regular: var(--commits_avatar-size);
+		position: absolute;
+		top: var(--commits_spacing-y);
+		left: var(--commits_spacing-x);
+	}
+
+	// TODO: remove when github removes width: 16px usage
+	[class*="prc-Avatar-Avatar-"] {
+		--avatarSize-regular: var(--commits_avatar-size);
+		width: var(--avatarSize-regular);
+		height: var(--avatarSize-regular);
+	}
+}
+
+[class*="CommitRow-module__ListItem_0-"] {
+	--borderColor-muted: #eee;
+	gap: 0;
+	padding-left: calc(var(--commits_avatar-size) + var(--commits_spacing-x) * 2);
+
+	[class*="MetadataContainer-module__container-"] {
+		padding-right: var(--commits_spacing-x);
+
+		[class*="prc-Button-ButtonBase-"][class*="prc-Button-IconButton-"] {
+			width: calc(var(--icon-size) + var(--base-size-16) * 2);
+			height: calc(var(--icon-size) + var(--base-size-8) * 2 * 1.5);
+			line-height: 28px;
+			min-height: calc(13px + var(--base-size-8) * 2 * 1.5);
+		}
+
+		[aria-label="View commit details"] {
+			& > [class*="prc-Button-ButtonBase-"] {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				margin-right: calc(var(--borderWidth-thin) * -1);
+			}
+
+			& + div > [class*="prc-Button-ButtonBase-"] {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+
+	[class*="MainContent-module__inner-"] {
+		line-height: var(--text-body-lineHeight-medium);
+		padding-bottom: var(--commits_spacing-y);
+	}
+
+	[class*="Title-module__container--"] {
+		line-height: var(--text-body-lineHeight-medium);
+		padding-top: var(--commits_spacing-y);
+	}
+
+	[data-testid="commit-row-show-description-button"] {
+		@extend %expander-btn;
+	}
+
+	// wtf lol
+	& > .px-1 {
+		display: none;
+	}
+}

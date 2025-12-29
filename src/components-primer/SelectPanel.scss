@@ -1,0 +1,22 @@
+[class*="prc-SelectPanel-Footer-"] {
+	background-color: var(--bgColor-muted);
+}
+
+[class*="prc-SelectPanel-Header-"] {
+	padding: var(--control-medium-paddingInline-normal)
+		var(--control-medium-paddingInline-spacious);
+	margin: 0;
+	line-height: 16px;
+	background-color: var(--bgColor-muted);
+	border-bottom: var(--borderWidth-thin) solid var(--borderColor-default);
+}
+
+[class*="prc-SelectPanel-Subtitle-"] {
+	margin-block-start: var(--base-size-8);
+	margin-inline-start: 0;
+}
+
+[class*="prc-SelectPanel-Title-"] {
+	margin: 0;
+	text-shadow: 0 1px 0 var(--fgColor-onEmphasis);
+}

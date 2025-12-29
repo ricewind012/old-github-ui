@@ -1,0 +1,96 @@
+[class*="prc-TooltipV2-Tooltip-"] {
+	// custom var
+	--tooltip_arrow-size: 5px;
+
+	--tooltip-bgColor: rgba(0, 0, 0, 0.8);
+	--tooltip-fgColor: #fff;
+	--overlay-paddingBlock-condensed: 5px;
+	--overlay-padding-condensed: 8px;
+
+	font-size: 11px;
+	line-height: var(--text-body-lineHeight-large);
+
+	&:popover-open {
+		animation-delay: 0.4s;
+	}
+
+	// restore arrow
+	&::after {
+		all: unset;
+
+		position: absolute;
+		z-index: 1000001;
+		width: 0;
+		height: 0;
+		color: var(--tooltip-bgColor);
+		pointer-events: none;
+		content: "";
+		border: var(--tooltip_arrow-size) solid transparent;
+	}
+
+	// n - north, s - south, e - east, w - west
+	&[data-direction="n"],
+	&[data-direction="ne"],
+	&[data-direction="nw"] {
+		margin-top: calc(var(--tooltip_arrow-size) * -1);
+
+		&::after {
+			right: 50%;
+			bottom: calc(var(--tooltip_arrow-size) * -2);
+			border-top-color: var(--tooltip-bgColor);
+		}
+	}
+
+	&[data-direction="s"],
+	&[data-direction="se"],
+	&[data-direction="sw"] {
+		margin-bottom: calc(var(--tooltip_arrow-size) * -1);
+
+		&::after {
+			bottom: auto;
+			right: 50%;
+			top: calc(var(--tooltip_arrow-size) * -2);
+			margin-right: calc(var(--tooltip_arrow-size) * -1);
+			border-bottom-color: var(--tooltip-bgColor);
+		}
+	}
+
+	&[data-direction="w"],
+	&[data-direction="e"] {
+		margin-inline: calc(var(--tooltip_arrow-size) * -1);
+
+		&::after {
+			top: 50%;
+			bottom: 50%;
+			margin-top: calc(var(--tooltip_arrow-size) * -1);
+		}
+	}
+
+	&[data-direction="nw"]::after,
+	&[data-direction="se"]::after {
+		right: 0;
+		margin-right: calc(var(--tooltip_arrow-size) * 3);
+	}
+
+	&[data-direction="ne"]::after,
+	&[data-direction="sw"]::after {
+		left: 0;
+		margin-left: calc(var(--tooltip_arrow-size) * 3);
+	}
+
+	// Move the tooltip body to the center of the object.
+	&[data-direction="s"]::after,
+	&[data-direction="n"]::after {
+		margin-right: calc(var(--tooltip_arrow-size) * -1);
+	}
+
+	&[data-direction="w"]::after {
+		right: calc(var(--tooltip_arrow-size) * -2);
+		border-left-color: var(--tooltip-bgColor);
+	}
+
+	&[data-direction="e"]::after {
+		left: calc(var(--tooltip_arrow-size) * -2);
+		border-right-color: var(--tooltip-bgColor);
+	}
+}

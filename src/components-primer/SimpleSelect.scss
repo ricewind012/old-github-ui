@@ -1,0 +1,7 @@
+[class*="SimpleSelect-module__Header-"] {
+	background-color: var(--bgColor-muted);
+
+	[data-component="IconButton"] {
+		@extend %button--octicon;
+	}
+}

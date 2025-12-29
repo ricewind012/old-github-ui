@@ -1,0 +1,118 @@
+[class*="DirectoryContent-module__Box_3-"] {
+	height: unset;
+
+	& > td {
+		all: unset;
+
+		display: table-cell;
+
+		// LatestCommit
+		& > div {
+			width: calc(100% + var(--borderWidth-thin) * 2);
+			margin: calc(var(--borderWidth-thin) * -1);
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+}
+
+[class*="DirectoryRichtextContent-module__SharedMarkdownContent-"] {
+	padding: 45px;
+}
+
+[class*="OverviewContent-module__Box_1-"] {
+	--control-medium-size: var(--control-small-size);
+	line-height: var(--text-body-lineHeight-small);
+
+	[class*="prc-Button-ButtonBase-"] {
+		--fgColor-muted: var(--fgColor-default);
+	}
+
+	// TODO(controls): make it use some small shit idfk
+	[class*="prc-components-TextInputWrapper-"] {
+		@extend %text-input--small;
+	}
+}
+
+[class*="OverviewContent-module__Box_4-"] {
+	gap: var(--stack-gap-condensed);
+}
+
+[class*="OverviewContent-module__Box_7-"] > :last-child > button {
+	&::before {
+		content: attr(aria-label);
+	}
+
+	& > span {
+		display: none;
+	}
+}
+
+[class*="OverviewRepoFiles-module__Box_3-"] {
+	background-color: var(--bgColor-muted);
+	font-size: 14px;
+	line-height: 17px;
+}
+
+[class*="OverviewRepoFiles-module__UnderlineNav-"] {
+	margin: 0;
+}
+
+[class*="Table-module__Box-"] {
+	overflow: visible;
+}
+
+[class*="TableOfContentsPanel-module__Box-"] {
+	padding: 0;
+
+	& > .px-2 {
+		padding: var(--base-size-8);
+		margin-bottom: var(--base-size-8);
+		background-color: var(--bgColor-muted);
+		border-bottom: var(--borderWidth-thin) solid var(--borderColor-default);
+	}
+}
+
+.BorderGrid {
+	--fgColor-muted: #767676;
+	--borderColor-default: #eee;
+
+	font-size: var(--text-body-size-small);
+	margin-top: var(--base-size-6);
+}
+
+.BorderGrid-cell {
+	padding-block: var(--base-size-20);
+
+	.h4 {
+		margin-bottom: 10px;
+	}
+}
+
+#repository-container-header {
+	margin-top: 20px;
+
+	// border
+	& > .container-xl:not(.d-flex) {
+		display: none;
+	}
+}
+
+.react-directory-commit-age {
+	padding: 0;
+}
+
+.react-directory-filename-column {
+	gap: var(--control-small-gap);
+	height: unset;
+}
+
+.react-directory-row {
+	height: unset;
+
+	td {
+		padding: var(--base-size-8) 10px;
+		line-height: 20px;
+		border-top: var(--borderWidth-thin) solid var(--borderColor-default);
+	}
+}

@@ -1,0 +1,15 @@
+[class*="ChecksStatusBadge-module__ChecksStatusBadgeButton-"],
+[class*="ChecksStatusBadge-module__ChecksStatusBadgeIconButton-"] {
+	@extend %expander-btn;
+
+	padding-top: 5px;
+
+	&::before {
+		display: none;
+	}
+
+	svg {
+		height: 12px;
+		display: inline-block;
+	}
+}

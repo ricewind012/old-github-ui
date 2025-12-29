@@ -1,0 +1,51 @@
+.Label,
+[class*="prc-Label-Label-"] {
+	display: inline-block;
+	height: unset;
+	padding: 3px 4px;
+	font-size: var(--text-body-size-small);
+	font-weight: var(--base-text-weight-semibold);
+	line-height: 1;
+	color: var(--fgColor-onEmphasis);
+	background-color: var(--fgColor-neutral);
+	border: var(--borderWidth-thin) solid transparent;
+	border-radius: var(--borderRadius-small);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.Label--inline,
+[class*="prc-Label-Label-"][data-size="small"] {
+	padding-block: 1.5px;
+}
+
+.Label--accent,
+.Label--info,
+[class*="prc-Label-Label-"][data-variant="accent"] {
+	background-color: var(--fgColor-accent);
+}
+
+.Label--success,
+.Label--open,
+[class*="prc-Label-Label-"][data-variant="success"] {
+	background-color: var(--fgColor-success);
+}
+
+.Label--purple,
+[class*="prc-Label-Label-"][data-variant="done"] {
+	background-color: var(--fgColor-done);
+}
+
+.Label--severe,
+.Label--danger,
+[class*="prc-Label-Label-"][data-variant="severe"] {
+	background-color: #c9510c;
+}
+
+.Label--orange,
+.Label--attention,
+.Label--warning,
+[class*="prc-Label-Label-"][data-variant="attention"] {
+	font-weight: var(--base-text-weight-normal);
+	color: #4c4a42;
+	background-color: #ffefc6;
+}

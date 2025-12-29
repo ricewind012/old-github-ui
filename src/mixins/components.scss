@@ -1,0 +1,330 @@
+// TODO: remove the .selected etc classes
+
+%button {
+	position: relative;
+	gap: var(--base-size-4);
+	padding: var(--base-size-8) var(--base-size-16);
+	font-size: var(--text-body-size-medium);
+	font-weight: var(--base-text-weight-semibold);
+	line-height: var(--control-medium-lineBoxHeight);
+	color: var(--fgColor-default);
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	background: linear-gradient(#fcfcfc, #eee);
+	border: var(--borderWidth-thin) solid #d5d5d5;
+	border-radius: var(--borderRadius-medium);
+
+	&:hover {
+		background: linear-gradient(#eee, #ddd);
+		border-color: #ccc;
+	}
+
+	&:active {
+		background: #dcdcdc;
+		border-color: #b5b5b5;
+		box-shadow: var(--shadow-control-md);
+	}
+
+	.Counter {
+		text-shadow: none;
+		background-color: #e5e5e5;
+	}
+}
+
+%button-disabled {
+	--disabled-opacity: 0.5;
+
+	color: color-mix(in srgb, #666 var(--disabled-opacity), transparent);
+	cursor: default;
+	background-color: color-mix(
+		in srgb,
+		#e5e5e5 var(--disabled-opacity),
+		transparent
+	);
+	background-image: none;
+	border-color: color-mix(
+		in srgb,
+		#c5c5c5 var(--disabled-opacity),
+		transparent
+	);
+	box-shadow: none;
+}
+
+%button-selected {
+	background-color: #dcdcdc;
+	background-image: none;
+	border-color: #b5b5b5;
+	box-shadow: var(--shadow-control-md);
+
+	&:hover {
+		background-color: #cfcfcf;
+	}
+
+	&:focus {
+		border-color: var(--control-focus-border);
+	}
+}
+
+%button-focus {
+	text-decoration: none;
+	border-color: var(--control-focus-border);
+	outline: none;
+	box-shadow: var(--control-focus-shadow);
+}
+
+%button--small {
+	padding: 2px 10px;
+}
+
+// TODO: variants have to be unified with the primer react button when github
+// goes full react, will look nicer
+
+%button--primary {
+	--fgColor-default: var(--fgColor-onEmphasis);
+	text-shadow: 0 -1px 0 var(--shadow-color-1);
+	background-color: var(--display-green-scale-6);
+	background-image: linear-gradient(
+		var(--display-green-scale-4),
+		var(--display-green-scale-6)
+	);
+	border-color: var(--display-green-scale-7);
+
+	&:hover {
+		--fgColor-default: var(--fgColor-onEmphasis);
+		background-color: var(--display-green-scale-7);
+		background-image: linear-gradient(
+			var(--display-green-scale-5),
+			var(--display-green-scale-7)
+		);
+		border-color: var(--display-green-scale-8);
+	}
+
+	&:active,
+	&.selected {
+		text-shadow: 0 1px 0 var(--shadow-color-1);
+		background-color: var(--display-green-scale-7);
+		background-image: none;
+		border-color: var(--display-green-scale-10);
+	}
+
+	&.selected:hover {
+		background-color: var(--display-green-scale-9);
+	}
+
+	&:disabled {
+		--fgColor-default: #fefefe;
+		background-color: var(--display-green-scale-2);
+		background-image: linear-gradient(
+			var(--display-green-scale-1),
+			var(--display-green-scale-2)
+		);
+		border-color: var(--display-green-scale-0) var(--display-green-scale-0)
+			var(--display-green-scale-3);
+	}
+
+	.Counter {
+		--fgColor-default: var(--display-green-scale-6);
+		background-color: var(--bgColor-emphasis);
+	}
+}
+
+%button--danger {
+	--fgColor-default: var(--display-red-scale-5);
+
+	&:hover {
+		--fgColor-default: var(--fgColor-onEmphasis);
+		background-color: var(--display-red-scale-3);
+		background-image: linear-gradient(
+			var(--display-red-scale-1),
+			var(--display-red-scale-3)
+		);
+		border-color: var(--display-red-scale-2);
+
+		.Counter {
+			--fgColor-default: var(--display-red-scale-3);
+			background-color: var(--bgColor-default);
+		}
+	}
+
+	&:active,
+	&.selected {
+		--fgColor-default: var(--fgColor-onEmphasis);
+		background-color: var(--display-red-scale-3);
+		background-image: none;
+		border-color: var(--display-red-scale-4);
+
+		.Counter {
+			--fgColor-default: var(--display-red-scale-3);
+			background-color: var(--bgColor-default);
+		}
+	}
+
+	&.selected:hover {
+		background-color: var(--display-red-scale-4);
+	}
+
+	&:disabled {
+		--fgColor-default: var(--display-red-scale-0);
+		background-color: #efefef;
+		background-image: linear-gradient(#fefefe, #efefef);
+		border-color: #e1e1e1;
+	}
+}
+
+%button--invisible {
+	--fgColor-default: var(--fgColor-accent);
+	background-color: var(--bgColor-default);
+	background-image: none;
+	border: var(--borderWidth-thin) solid var(--borderColor-default);
+
+	&:hover,
+	&:active,
+	&.selected {
+		--fgColor-default: var(--fgColor-onEmphasis);
+		background-color: var(--fgColor-accent);
+		background-image: none;
+		border-color: var(--fgColor-accent);
+
+		.Counter {
+			--fgColor-default: var(--fgColor-accent);
+			background-color: var(--bgColor-default);
+		}
+	}
+
+	&.selected:hover {
+		background-color: #396cad;
+	}
+
+	&:disabled {
+		--fgColor-default: var(--fgColor-neutral);
+		background-color: var(--bgColor-default);
+		background-image: none;
+		border-color: var(--borderColor-default);
+	}
+
+	.Counter {
+		background-color: #eee;
+	}
+}
+
+%button--dropdown {
+	&::after {
+		content: "";
+		display: block;
+		background-color: currentColor;
+		mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20version%3D%221.1%22%20width%3D%2216%22%3E%3Cpath%20d%3D%22m4.427%207.427%203.396%203.396a.25.25%200%200%200%20.354%200l3.396-3.396A.25.25%200%200%200%2011.396%207H4.604a.25.25%200%200%200-.177.427Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+}
+
+%button--icon-button {
+	width: auto;
+}
+
+%button--link {
+	display: inline-block;
+	padding: 0;
+	font-size: inherit;
+	color: var(--fgColor-accent);
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+	background: transparent;
+	border: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+%button--octicon {
+	padding: var(--control-medium-paddingInline-condensed);
+	line-height: 1;
+	color: var(--fgColor-neutral);
+	background: transparent;
+	border: none;
+	outline: none;
+	height: unset;
+
+	&:hover {
+		color: var(--fgColor-accent);
+	}
+
+	&:disabled {
+		color: #bbb;
+		cursor: default;
+
+		&:hover {
+			color: #bbb;
+		}
+	}
+}
+
+%expander-btn {
+	all: unset;
+
+	display: inline-block;
+	height: 7px;
+	padding: 0 5px 5px;
+	font-size: var(--text-body-size-small);
+	font-weight: var(--base-text-weight-semibold);
+	line-height: 6px;
+	color: #555;
+	vertical-align: middle;
+	background: #ddd;
+	border-radius: 1px;
+	border: 0;
+
+	&:hover {
+		color: #555;
+		background-color: #ccc;
+	}
+
+	&:active {
+		color: var(--fgColor-onEmphasis);
+		background-color: var(--bgColor-accent-emphasis);
+	}
+
+	&::before {
+		content: "…";
+	}
+
+	svg {
+		display: none;
+	}
+}
+
+%text-input {
+	min-height: var(--control-medium-size);
+	padding: 7px 8px;
+	font-size: var(--text-body-size-medium);
+	line-height: inherit;
+	color: var(--fgColor-default);
+	vertical-align: middle;
+	background-color: var(--bgColor-default);
+	border: var(--borderWidth-thin) solid var(--borderColor-muted);
+	border-radius: var(--borderRadius-medium);
+	outline: none;
+	box-shadow: var(--shadow-control-sm);
+}
+
+%text-input--focus {
+	border-color: var(--control-focus-border);
+	outline: none;
+	box-shadow: var(--shadow-control-sm), var(--control-focus-shadow);
+}
+
+%text-input--small {
+	min-height: var(--control-small-size);
+	padding-block: var(--control-small-paddingBlock);
+	font-size: var(--text-body-size-small);
+}
+
+%text-input--large {
+	padding: 6px 10px;
+	font-size: 16px;
+}

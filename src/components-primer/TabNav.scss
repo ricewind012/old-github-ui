@@ -1,0 +1,37 @@
+[class*="prc-TabNav-TabNavLink-"] {
+	padding: 5px 8px;
+	font-size: 11px;
+	font-weight: var(--base-text-weight-semibold);
+	line-height: 20px;
+	color: #888;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: var(--borderRadius-medium) var(--borderRadius-medium) 0 0;
+
+	&[class*="prc-TabNav-Selected-"] {
+		padding: 4px 5px;
+		color: var(--fgColor-default);
+		background-color: #fff;
+		border: var(--borderWidth-thin) solid var(--borderColor-muted);
+		border-bottom: var(--borderWidth-thin) solid #fff;
+	}
+}
+
+/* TODO: maybe this one's correct ?
+
+	display:inline-block;
+	padding:8px 12px;
+	font-size:14px;
+	line-height:20px;
+	color:#666;
+	text-decoration:none;
+	background-color:transparent;
+	border:var(--borderWidth-thin) solid transparent;
+	border-bottom:0;
+
+	color:#333;
+	background-color:#fff;
+	border-color:var(--borderColor-muted);
+	border-radius: var(--borderRadius-medium) var(--borderRadius-medium) 0 0;
+
+	*/

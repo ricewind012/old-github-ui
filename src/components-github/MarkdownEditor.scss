@@ -1,0 +1,15 @@
+[class*="MarkdownEditor-module__fieldSet-"] {
+	// hardcoded 36px
+	[class*="Footer-module__footer-"] {
+		min-height: unset;
+	}
+
+	[class*="Toolbar-module__toolbar-"] {
+		padding: 0;
+	}
+
+	[class*="ToolbarButton-module__iconButton-"] {
+		// TODO: make Button's [data-variant="invisible"] extend %button--octicon ?
+		@extend %button--octicon;
+	}
+}

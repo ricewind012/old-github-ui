@@ -1,0 +1,296 @@
+@mixin -btn-link {
+	padding: 13px 15px;
+
+	&:hover,
+	&[aria-current] {
+		color: #222;
+		font-weight: var(--base-text-weight-normal);
+	}
+}
+
+[class*="ActivityHeader-module__AuthorName-"] {
+	font-weight: var(--base-text-weight-bold);
+}
+
+[class*="Filter-module__Box_2-"] {
+	@extend %text-input;
+
+	line-height: var(--text-body-lineHeight-small);
+
+	&[class*="Filter-module__leftRounded-"] {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	&:focus-visible {
+		@extend %text-input--focus;
+	}
+
+	[class*="ClearButton-module__clearButton-"] {
+		@extend %button--octicon;
+	}
+
+	[class*="Input-module__Box_4-"],
+	[class*="Input-module__Box_2-"] {
+		height: unset;
+	}
+}
+
+[class*="HeaderViewer-module__issueNumberText-"] {
+	letter-spacing: -1px;
+}
+
+[class*="HeaderViewer-module__PageHeader_Title-"] {
+	font-weight: var(--base-text-weight-semibold);
+}
+
+[class*="IssueBodyHeaderAuthor-module__authorLoginLink-"] {
+	font-weight: var(--base-text-weight-semibold);
+}
+
+[class*="IssueBodyHeader-module__activityHeaderWrapper-"] {
+	align-items: center;
+}
+
+// old component
+[data-testid="comment-header"],
+[class*="IssueBodyHeader-module__IssueBodyHeaderContainer-"] {
+	overflow: visible;
+	position: relative;
+	padding: 10px 15px;
+
+	&::before {
+		--size: 16px;
+		position: absolute;
+		top: calc(50% - var(--size) / 2);
+		right: 100%;
+		left: calc(var(--size) * -1);
+		display: block;
+		width: 0;
+		height: 0;
+		pointer-events: none;
+		content: " ";
+		border-color: transparent;
+		border-style: solid solid outset;
+		border-width: calc(var(--size) / 2);
+		border-right-color: var(--bgColor-muted);
+	}
+
+	[data-component="IconButton"] {
+		@extend %button--octicon;
+	}
+}
+
+[class*="IssueBodyHeader-module__narrowViewportWrapper-"] {
+	padding: 0;
+}
+
+// WHY is IssueCommentViewer a different component from the first one ???
+[class*="IssueBodyViewer-module__IssueBody-"],
+[class*="IssueCommentViewer-module__IssueCommentBody-"] {
+	gap: 0;
+	padding: 0;
+
+	& > .markdown-body {
+		padding: var(--base-size-20);
+	}
+}
+
+[class*="IssueBodyViewer-module__IssueBodyPlanBrainstormButtonContainer-"],
+[class*="IssueBodyViewer-module__IssueBodySubIssueButtonContainer-"],
+[class*="IssueCommentViewer-module__IssueCommentBody-"] {
+	margin: 0;
+}
+
+[class*="IssueBodyViewer-module__IssueBodyTaskList-"] > [role="toolbar"],
+[class*="IssueCommentViewer-module__IssueCommentBody-"] > [role="toolbar"] {
+	border-top: var(--borderWidth-thin) solid var(--borderColor-default);
+	gap: 0;
+	width: 100%;
+
+	[class*="prc-Button-ButtonBase-"] {
+		@extend %button--octicon;
+
+		--borderRadius-medium: 0px;
+		color: var(--fgColor-default);
+		height: auto;
+		line-height: var(--icon-size);
+		padding: var(--control-medium-paddingInline-normal);
+		border-right: var(--borderWidth-thin) solid var(--borderColor-default);
+
+		&:hover {
+			background-color: var(--bgColor-muted);
+		}
+	}
+
+	[class*="prc-ButtonGroup-ButtonGroup-"] {
+		// Remove margin intended for the borders, as it causes borders removal
+		// on hover for some reason
+		& > * {
+			margin: 0;
+		}
+	}
+}
+
+[class*="IssueCommentComposer-module__heading-"] {
+	margin-top: var(--base-size-16);
+}
+
+[class*="IssuePullRequestDescription-module__descriptionItem-"] {
+	margin-top: var(--base-size-4);
+}
+
+[class*="IssueViewer-module__contentAndSidebarWrapper-"] {
+	// Match repo overview
+	gap: 24px;
+}
+
+[class*="ListItem-module__listItem-"] {
+	gap: 0;
+
+	[class*="Description-module__container-"] {
+		// for children
+		--fgColor-muted: #767676;
+	}
+
+	[class*="LeadingContent-module__container-"] {
+		padding-inline: var(--base-size-16);
+	}
+
+	[class*="MainContent-module__inner-"] {
+		padding-bottom: var(--base-size-16);
+	}
+
+	:where([class*="Title-module__container-"]) {
+		padding-top: var(--base-size-16);
+	}
+
+	[class*="Title-module__heading-"] {
+		font-weight: var(--base-text-weight-semibold);
+		margin-inline-end: var(--base-size-8);
+	}
+}
+
+[class*="LoadMore-module__LoadMoreContainer-"] {
+	gap: 0;
+	padding: 0;
+}
+
+[class*="LoadMore-module__loadMoreContentContainer-"] {
+	box-shadow: none;
+}
+
+[class*="Metadata-module__container-"] {
+	--bgColor-muted: #f8f8f8;
+	border-color: var(--borderColor-default);
+	height: unset;
+	padding: 0;
+	padding-left: var(--base-size-16);
+}
+
+// create issue dialog
+[class*="MetadataFooter-module__MetadataFooterContainer-"] {
+	[class*="SharedPicker-module__dashedPickerButton-"] {
+		@extend %button--dropdown;
+	}
+}
+
+[class*="OverflowMenu-module__IconButton_0-"] {
+	margin-inline: var(--base-size-16);
+}
+
+[class*="ReactionButton-module__reactionToggleButton-"] {
+	[data-component="leadingVisual"] {
+		display: initial;
+	}
+}
+
+[class*="ReactionViewerAnchor-module__ReactionViewerAnchorButton-"] {
+	height: auto;
+}
+
+[class*="Search-module__SearchContainer-"] {
+	gap: var(--stack-gap-spacious);
+}
+
+// this is in issues.css, so... (seen in the "labels" page)
+[class*="SearchBar-module__searchBtn-"] {
+	border-bottom-left-radius: 0;
+	border-left: none;
+	border-top-left-radius: 0;
+}
+
+[class*="SearchBar-module__searchInput-"] {
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+}
+
+[class*="Section-module__childrenContainer-"] > *,
+[class*="Section-module__emptyText-"] {
+	padding: 0;
+}
+
+[class*="Section-module__headerContentWrapper-"] {
+	// old component
+	& > [class^="Box-"] {
+		justify-content: space-between;
+	}
+}
+
+[class*="Section-module__SectionContainer-"] {
+	border-block-start: var(--borderWidth-thin) solid var(--borderColor-default);
+	padding-block-start: var(--base-size-20);
+	margin-block-start: var(--base-size-20);
+
+	&::after {
+		display: none;
+	}
+}
+
+[class*="SectionHeader-module__editButton-"] {
+	@extend %button--octicon;
+
+	gap: 0;
+	width: auto;
+}
+
+[class*="SectionHeader-module__SectionHeaderTitle-"] {
+	position: unset;
+}
+
+[class*="SubscriptionSection-module__container-"] {
+	margin-bottom: var(--base-size-8);
+}
+
+[class*="SubscriptionSection-module__header-"] {
+	top: 0;
+	left: 0;
+}
+
+[class*="ListItems-module__tabsContainer-"] {
+	gap: var(--base-size-16);
+
+	[class*="SectionFilterLink-module__container-"] {
+		@include -btn-link;
+
+		line-height: inherit;
+		padding-inline: 0;
+	}
+}
+
+[class*="VisibleItems-module__Box_1-"] {
+	gap: 0;
+
+	[class*="prc-Button-ButtonBase-"] {
+		all: unset;
+
+		display: flex;
+
+		@include -btn-link;
+	}
+}
+
+[class*="VisibleAndOverflowContainer-module__Box_0-"],
+[class*="VisibleAndOverflowContainer-module__Box_1-"] {
+	gap: 0;
+}
